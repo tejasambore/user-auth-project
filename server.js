@@ -13,16 +13,17 @@ const users = [];
 const SECRET_KEY = 'your_secret_key';
 
 app.get('/', (req, res) => {
-    res.send('<h1>User Authentication API</h1><p>Use Postman or curl to access the endpoints.</p>');
-
-    res.json({
-        // message: `<h1>Welcome to the User Authentication API</h1>`,
-        endpoints: {
-            register: '/register (POST)',
-            login: '/login (POST)',
-            forgotPassword: '/forgot-password (POST)'
-        }
-    });
+    res.send(
+        `<h1>User Authentication API</h1>
+        <p>Use Postman or curl to access the endpoints.</p> 
+        
+        <h2>Endpoints:</h2> 
+        <ul>
+            <li>/register (POST)</li>
+            <li>/login (POST)</li>
+            <li>/forgot-password (POST)</li>
+        </ul>`,
+    );
 });
 
 app.post('/register', async (req, res) => {

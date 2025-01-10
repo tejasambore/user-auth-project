@@ -1,9 +1,11 @@
 # User Authentication API
+
 This project is a Node.js-based API for user authentication, including registration, login, and password reset functionality. It uses Express.js for handling HTTP requests, bcrypt for password hashing, and JSON Web Tokens (JWT) for session management.
 
 ---
 
 ## Features
+
 - **User Registration:** Register new users with email, username, and password.
 - **User Login:** Authenticate users with username and password, and return a JWT token.
 - **Password Reset:** Update user password securely using email and a new password.
@@ -11,14 +13,17 @@ This project is a Node.js-based API for user authentication, including registrat
 ---
 
 ## Prerequisites
+
 Ensure the following are installed on your local machine:
+
 - [Node.js](https://nodejs.org/) (v14 or later)
 - [Postman](https://www.postman.com/) (for API testing)
 - [Git](https://git-scm.com/)
 
 ---
 
-## Installatio
+## Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/user-auth-project.git
@@ -44,7 +49,7 @@ Ensure the following are installed on your local machine:
    ```
    http://localhost:3000
    ```
-   
+
 ---
 
 ## API Endpoints
@@ -62,7 +67,6 @@ Ensure the following are installed on your local machine:
       "password": "password123"
   }
   ```
-
 - **Response:**
   ```json
   {
@@ -82,7 +86,6 @@ Ensure the following are installed on your local machine:
       "password": "password123"
   }
   ```
-
 - **Response:**
   ```json
   {
@@ -96,7 +99,6 @@ Ensure the following are installed on your local machine:
 - **Method:** `POST`
 - **Headers:**
   - `Content-Type: application/json`
-
 - **Body:**
   ```json
   {
@@ -104,7 +106,6 @@ Ensure the following are installed on your local machine:
       "newPassword": "newPassword123"
   }
   ```
-
 - **Response:**
   ```json
   {
@@ -115,11 +116,13 @@ Ensure the following are installed on your local machine:
 ---
 
 ## Testing
+
 Use **Postman** or any API testing tool to test the endpoints. Ensure the server is running and the appropriate headers and body data are provided.
 
 ---
 
 ## Deployment
+
 To host the project online, follow these steps:
 
 ### Hosting Options:
@@ -139,6 +142,7 @@ To host the project online, follow these steps:
 ---
 
 ## Technologies Used
+
 - **Node.js**: JavaScript runtime.
 - **Express.js**: Web framework for Node.js.
 - **bcrypt**: Password hashing.
@@ -146,12 +150,35 @@ To host the project online, follow these steps:
 
 ---
 
+## Enhancing Browser View
+
+To make the root route (`/`) user-friendly, the following code can be added to `server.js`:
+
+```javascript
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to the User Authentication API!',
+        endpoints: {
+            register: '/register (POST)',
+            login: '/login (POST)',
+            forgotPassword: '/forgot-password (POST)'
+        }
+    });
+});
+```
+
+After deploying, visiting the base URL (e.g., `https://your-app.onrender.com`) will display a list of available API endpoints.
+
+---
+
 ## License
+
 This project is licensed under the MIT License.
 
 ---
 
 ## Acknowledgments
+
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Express.js Documentation](https://expressjs.com/)
 - [bcrypt Documentation](https://www.npmjs.com/package/bcrypt)
