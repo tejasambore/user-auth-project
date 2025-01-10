@@ -12,6 +12,19 @@ const users = [];
 
 const SECRET_KEY = 'your_secret_key';
 
+app.get('/', (req, res) => {
+    res.send('<h1>User Authentication API</h1><p>Use Postman or curl to access the endpoints.</p>');
+
+    res.json({
+        // message: `<h1>Welcome to the User Authentication API</h1>`,
+        endpoints: {
+            register: '/register (POST)',
+            login: '/login (POST)',
+            forgotPassword: '/forgot-password (POST)'
+        }
+    });
+});
+
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
 
